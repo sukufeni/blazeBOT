@@ -47,13 +47,8 @@ _Para executar o bot, precisa seguir os passos a seguir._
    ```sh
    npm install
    ```
-   ou
-   ```sh
-   yarn
-   ```
-3. Trocar o nome do arquivo `.env.exemple` para `.env`
 
-4. Coloque os valores das variavés de ambiente no arquivo `.env`
+3. Coloque os valores das variavés de ambiente no arquivo `.env`
    ```js
    PORT = 3000 //não alterar essa porta
    
@@ -75,9 +70,10 @@ _Para executar o bot, precisa seguir os passos a seguir._
 
 Para esse projeto é necessário ter um banco de dados, optei por usar o [MySql][mysql].
 
-1. Instale o [MySql][mysql]
+1. Instale o [MySql][mysql] via docker: https://hub.docker.com/_/mysql
 
 2. Crie um banco de dados com o seguinte nome `tips_blaze`
+   docker run --name mk-phpmyadmin -v phpmyadmin-volume:/etc/phpmyadmin/config.user.inc.php --link mk-mysql:db -p 82:80 -d phpmyadmin/phpmyadmin
 
 <p align="right"><a href="#top">top</a></p>
 
@@ -91,81 +87,28 @@ Para esse projeto é necessário ter um banco de dados, optei por usar o [MySql]
    ```
    npx prisma migrate dev --name add_tables
    ```
-   ou
-   ```
-   yarn prisma migrate dev --name add_tables
    ```
 
 2. Executar como desenvolvimento
    ```
    npm run dev
    ```
-   ou
-   ```
-   yarn dev
-   ```
-3. Executar em produção
-   ```
-   npm run build
-   ```
-   ou
-   ```
-   yarn build
-   ```
-   Depois esse comando
-   ```
-   npm run start
-   ```
-   ou
-   ```
-   yarn start
-   ```
-
    __Se tudo ocorreu bem, deve ver no console as seguintes messagens:__
    ```
    🤖 Bot On! 🟢
    ✅ Server is running!
+
+3. Executar o script de envio de sinais para o bot: node run testBlazeAPI.js
    ```
 
 <p align="right"><a href="#top">top</a></p>
 
-## 📛 Rotas
-_Para que o BOT venha enviar mensagem no telegram, você precisa enviar uma request para a "Rota" abaixo._
-
-* Recebe a última cor que saiu na [Blaze][blaze], Método: "POST".
-  
-  ```
-    https://localhost:3000/colors
-  ```
-   ~~~json
-    //espera receber esses parametros
-    {
-      "colorName": "red",
-      "number": "4"
-    }
-   ~~~
-* Se no console aparecer:
-   ```
-   ⚙️ Precisa configurar seu bot!
-   ```
-   _Abra a conversa do seu Bot no telegram use o comando `/start` e siga os passos para cadastrar seu bot._
-
-## ⚠️ Observações
-
-1. _Você precisa **COLETAR** a última cor que saiu na [Blaze][blaze]._
-
-<p align="right"><a href="#top">top</a></p>
-
-## Contato
-
-Telegram: __@jocimarjsc__
-
-
-
----
-⌨️ com ❤️ por [Jocimar Costa][GitHub] 😊
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[GitHub]: https://github.com/jocimarjsc
 [blaze]: https://blaze.com/r/KOGDR9
 [mysql]: https://dev.mysql.com/downloads/installer/
 [nodejs]: https://nodejs.org/en/
+
+
+Prerequisitos: 
+1- bashLinux: https://www.gnu.org/software/bash/
+2- docker(container) : https://www.docker.com/
+3- node: https://nodejs.org/en/download/

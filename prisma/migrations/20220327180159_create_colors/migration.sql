@@ -6,5 +6,5 @@
 
 */
 -- AlterTable
-ALTER TABLE `colors` DROP COLUMN `color`,
+ALTER TABLE `Colors` DROP COLUMN `color`,
     ADD COLUMN `colorName` VARCHAR(191) NOT NULL;

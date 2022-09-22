@@ -5,7 +5,7 @@
 
 */
 -- DropTable
-DROP TABLE `colors`;
+DROP TABLE `Colors`;
 
 -- CreateTable
 CREATE TABLE `config` (
