@@ -87,7 +87,6 @@ Para esse projeto é necessário ter um banco de dados, optei por usar o [MySql]
    ```
    npx prisma migrate dev --name add_tables
    ```
-   ```
 
 2. Executar como desenvolvimento
    ```
@@ -98,8 +97,9 @@ Para esse projeto é necessário ter um banco de dados, optei por usar o [MySql]
    🤖 Bot On! 🟢
    ✅ Server is running!
 
-3. Executar o script de envio de sinais para o bot: node run testBlazeAPI.js
+3. Executar o script de envio de sinais para o bot: 
    ```
+   node run testBlazeAPI.js
 
 <p align="right"><a href="#top">top</a></p>
 
